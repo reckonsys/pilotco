@@ -5,7 +5,7 @@
 # Your service name will be used in naming your resources like log groups, ECS services, etc.
 name: api
 # The "architecture" of the service you're running.
-type: Load Balanced Web Service
+type: Backend App
 
 image:
   # Docker build arguments. You can specify additional overrides here. Supported: dockerfile, context, args
@@ -14,8 +14,8 @@ image:
   port: 8000
 
 http:
-  # Requests to this path will be forwarded to your service. 
-  # To match all requests you can use the "/" path. 
+  # Requests to this path will be forwarded to your service.
+  # To match all requests you can use the "/" path.
   path: '/'
   # You can specify a custom health check path. The default is "/"
   # healthcheck: '/'
