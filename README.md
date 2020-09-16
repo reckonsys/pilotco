@@ -1,2 +1,2 @@
-# poliotco
+# pilotco
 AWS copiolot experiment
