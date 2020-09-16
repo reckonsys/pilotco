@@ -1,0 +1,21 @@
+[log]
+  level = "DEBUG"
+  format = "json"
+[providers.ecs]
+  exposedByDefault = false
+  cluster = ["pilotco-test-Cluster-7AcBdNOcTLpu"]
+[entryPoints]
+  [entryPoints.web]
+    address = ":80"
+#     [entryPoints.web.http.redirections.entryPoint]
+#       to = "websecure"
+#       scheme = "https"
+#   [entryPoints.websecure]
+#     address = ":443"
+#   [entryPoints.websecure.http.tls]
+#     certResolver = "biggaCertResolver"
+# [certificatesResolvers.biggaCertResolver.acme]
+#   email = "dhilip@reckonsys.com"
+#   storage = "/etc/traefik/acme/acme.json"
+#   [certificatesResolvers.biggaCertResolver.acme.dnsChallenge]
+#     provider = "route53"
