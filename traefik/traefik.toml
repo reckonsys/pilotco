@@ -1,9 +1,12 @@
 [log]
   level = "DEBUG"
   format = "json"
-[providers.ecs]
-  exposedByDefault = false
-  cluster = ["pilotco-test-Cluster-7AcBdNOcTLpu"]
+# [providers.ecs]
+#   exposedByDefault = false
+#   cluster = ["pilotco-test-Cluster-7AcBdNOcTLpu"]
+[providers]
+  [providers.file]
+    filename = "/etc/traefik/services.toml"
 [entryPoints]
   [entryPoints.web]
     address = ":80"

@@ -1,0 +1,22 @@
+[http]
+  [http.routers]
+    [http.routers.api]
+      entryPoints = ["web"]
+      # middlewares = ["my-basic-auth"]
+      service = "api"
+      rule = "Path(`/`)"
+
+  # [http.middlewares]
+  #   [http.middlewares.my-basic-auth.basicAuth]
+  #     users = ["test:$apr1$H6uskkkW$IgXLP6ewTrSuBkTrqE8wj/",
+  #               "test2:$apr1$d9hr9HBB$4HxwgUir3HP4EsggP/QNo0"]
+  #     usersFile = "etc/traefik/.htpasswd"
+
+  # Add the service
+  [http.services]
+    [http.services.api]
+      [http.services.api.loadBalancer]
+        [[http.services.api.loadBalancer.servers]]
+          url = "http://api.pilotco.local:8000"
+        # [[http.services.api.loadBalancer.servers]]
+        #   url = "http://bar/"
