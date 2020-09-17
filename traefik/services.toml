@@ -1,10 +1,10 @@
 [http]
   [http.routers]
     [http.routers.api]
-      entryPoints = ["web"]
+      entryPoints = ["websecure"]
       # middlewares = ["my-basic-auth"]
       service = "api"
-      rule = "Path(`/`)"
+      rule = "Host(`pilotco.reckonsys.xyz`)"
 
   # [http.middlewares]
   #   [http.middlewares.my-basic-auth.basicAuth]

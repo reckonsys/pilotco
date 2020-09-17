@@ -1,5 +1,5 @@
 FROM traefik:v2.3
-EXPOSE 80
+EXPOSE 443
 RUN mkdir -p /etc/traefik/acme
 RUN touch /etc/traefik/acme/acme.json
 RUN chmod 600 /etc/traefik/acme/acme.json

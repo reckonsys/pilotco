@@ -11,7 +11,7 @@ image:
   # Docker build arguments. You can specify additional overrides here. Supported: dockerfile, context, args
   build: ./Dockerfile
   # Port exposed through your container to route traffic to it.
-  port: 80
+  port: 443
 
 http:
   # Requests to this path will be forwarded to your service.
@@ -32,12 +32,12 @@ count: 1
 #variables:                    # Pass environment variables as key value pairs.
 #  LOG_LEVEL: info
 #
-secrets:                      # Pass secrets from AWS Systems Manager (SSM) Parameter Store.
-  FOO_PARAM: FOO_PARAM  # The key is the name of the environment variable, the value is the name of the SSM parameter.
+# secrets:                      # Pass secrets from AWS Systems Manager (SSM) Parameter Store.
+#   FOO_PARAM: FOO_PARAM  # The key is the name of the environment variable, the value is the name of the SSM parameter.
 
 # You can override any of the values defined above by environment.
 environments:
   test:
-    count: 2               # Number of tasks to run for the "test" environment.
+    count: 1               # Number of tasks to run for the "test" environment.
     secrets:
-      BOO_PARAM: BOO_PARAM
+      DO_AUTH_TOKEN: DO_AUTH_TOKEN
